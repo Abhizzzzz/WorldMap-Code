@@ -1,0 +1,128 @@
+<!-- loader -->
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-grid-pulse">
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+<div class="container" style="margin-top: -1.5rem;">
+  <div class="row">
+    <!-- first card -->
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+      <div class="card text-center bg-danger">
+        <div class="card-header">
+          Region 1
+        </div>
+        <img class="card-img-top" src="./assets/asia.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="color: azure">Asia</h5>
+          <p class="card-text">
+            Asia is Earth's largest and most populous continent, located primarily in the Eastern and Northern Hemispheres. It shares
+            the continental landmass of Eurasia with the continent of Europe and the continental landmass of Afro-Eurasia
+            with both Europe and Africa. Asia covers an area of 44,579,000 square kilometres (17,212,000 sq mi), about 30%
+            of Earth's total land area and 8.7% of the Earth's total surface area. The continent, which has long been home
+            to the majority of the human population,[5] was the site of many of the first civilizations. Asia is notable
+            for not only its overall large size and population, but also dense and large settlements, as well as vast barely
+            populated regions. Its 4.5 billion people constitute roughly 60% of the world's population.
+          </p>
+          <a class="btn btn-primary btn-dark" [routerLink]="['/countries',asia]">Countries</a>
+        </div>
+      </div>
+    </div>
+    <!-- second card -->
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 adjustingMargin">
+      <div class="card text-center bg-success">
+        <div class="card-header">
+          Region 2
+        </div>
+        <img class="card-img-top" src="./assets/africa.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="color: azure">Africa</h5>
+          <p class="card-text">
+            Africa is the world's second largest and second most-populous continent(behind Asia in both categories). At about 30.3 million
+            km2 (11.7 million square miles) including adjacent islands,it covers 6% of Earth's total surface area and 20%
+            of its land area.With 1.2 billion people as of 2016,it accounts for about 16% of the world's human population.The
+            continent is surrounded by the Mediterranean Sea to the north, the Isthmus of Suez and the Red Sea to the northeast,the
+            Indian Ocean to the southeast and the Atlantic Ocean to the west.The continent includes Madagascar and various
+            archipelagos.It contains 54 fully recognised sovereign states(countries),nine territories and two de facto independent
+            states.
+          </p>
+          <a class="btn btn-primary btn-dark" [routerLink]="['/countries',africa]">Countries</a>
+        </div>
+      </div>
+    </div>
+    <!-- third card -->
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 adjustingMargin">
+      <div class="card text-center bg-primary">
+        <div class="card-header">
+          Region 3
+        </div>
+        <img class="card-img-top" src="./assets/america.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="color: azure">Americas</h5>
+          <p class="card-text">
+            The Americas (also collectively called America) comprise the totality of the continents of North and South America. Together,
+            they make up most of the land in Earth's western hemisphere and comprise the New World. Along with their associated
+            islands, they cover 8% of Earth's total surface area and 28.4% of its land area. The topography is dominated
+            by the American Cordillera, a long chain of mountains that runs the length of the west coast. The flatter eastern
+            side of the Americas is dominated by large river basins, such as the Amazon, St. Lawrence River / Great Lakes
+            basin, Mississippi, and La Plata. Since the Americas extend 14,000 km (8,700 mi) from north to south, the climate
+            and ecology vary widely, from the arctic tundra of Northern Canada, Greenland, and Alaska, to the tropical rain
+            forests in Central America and South America. Humans first settled the Americas from Asia between 42,000 and
+            17,000 years ago.
+          </p>
+          <a [routerLink]="['/countries',americas]" class="btn btn-primary btn-dark">Countries</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 1rem;">
+    <!-- for centerizing the last two cards -->
+    <div class="col-xl-2 col-lg-2 col-md-0 col-sm-0 col-0"></div>
+    <!-- fourth card -->
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+      <div class="card text-center bg-warning">
+        <div class="card-header">
+          Region 4
+        </div>
+        <img class="card-img-top" src="./assets/europe.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="color: azure">Europe</h5>
+          <p class="card-text">
+            Europe is a continent located entirely in the Northern Hemisphere and mostly in the Eastern Hemisphere. It is bordered by
+            the Arctic Ocean to the north, the Atlantic Ocean to the west and the Mediterranean Sea to the south. It comprises
+            the westernmost part of Eurasia. Since around 1850, Europe is most commonly considered as separated from Asia
+            by the watershed divides of the Ural and Caucasus Mountains, the Ural River, the Caspian and Black Seas and the
+            waterways of the Turkish Straits. Though the term "continent" implies physical geography, the land border is
+            somewhat arbitrary and has moved since its first conception in classical antiquity. The division of Eurasia into
+            two continents reflects East-West cultural, linguistic and ethnic differences.
+          </p>
+          <a [routerLink]="['/countries',europe]" class="btn btn-primary btn-dark">Countries</a>
+        </div>
+      </div>
+    </div>
+    <!-- fifth card -->
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 adjustingMargin">
+      <div class="card text-center bg-info">
+        <div class="card-header">
+          Region 5
+        </div>
+        <img class="card-img-top" src="./assets/oceania.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="color: azure">Oceania</h5>
+          <p class="card-text">
+            Oceania is a geographic region comprising Melanesia, Micronesia, Polynesia and Australasia. Spanning the eastern and western
+            hemispheres, Oceania covers an area of 8,525,989 square kilometres (3,291,903 sq mi) and has a population of
+            40 million. Situated in the southeast of the Asia-Pacific region, Oceania is the smallest continental grouping
+            in land area and the second smallest in population after Antarctica. The islands at the geographic extremes of
+            Oceania are Bonin Islands, a politically integral part of Japan; Hawaii, a state of the United States; Clipperton
+            Island, a possession of France; the Juan Fernández Islands, belonging to Chile; the Campbell Islands, belonging
+            to New Zealand; and the Cocos (Keeling) Islands.
+          </p>
+          <a [routerLink]="['/countries',oceania]" class="btn btn-primary btn-dark">Countries</a>
+        </div>
+      </div>
+    </div>
+    <!-- for centerizing the last two cards -->
+    <div class="col-xl-2 col-lg-2 col-md-0 col-sm-0 col-0"></div>
+  </div>
+  <br>
+</div>

@@ -1,0 +1,79 @@
+<!-- loader -->
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-grid-pulse">
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+<div class="container" style="text-align: center;margin-top: -3.5rem;" *ngIf="countryDetails">
+  <div class="row">
+    <!-- countries details -->
+    <div class="col-12" *ngFor="let countryDetail of countryDetails">
+      <img [src]="countryDetail.flag" style="height: 50vh;width: 70vw;" class="img-fluid" alt="Flag image">
+      <hr>
+      <h1>{{countryDetail.name | uppercase}}</h1>
+      <hr>
+      <h5>Capital : {{countryDetail.capital}}</h5>
+      <hr>
+      <h5>Demonym : {{countryDetail.demonym}}</h5>
+      <hr>
+      <h5>Area : {{countryDetail.area}}</h5>
+      <hr>
+      <h5 *ngIf="countryDetail.gini">Gini : {{countryDetail.gini}}
+        <hr>
+      </h5>
+      <h5>Region : {{countryDetail.region}}</h5>
+      <hr>
+      <h5>Subregion : {{countryDetail.subregion}}</h5>
+      <hr>
+      <h5>Native name : {{countryDetail.nativeName}}</h5>
+      <hr>
+      <h5>Numeric code : {{countryDetail.numericCode}}</h5>
+      <hr>
+      <h5>Population : {{countryDetail.population}}</h5>
+      <hr>
+      <h5>Alpha2Code : {{countryDetail.alpha2Code}}</h5>
+      <hr>
+      <h5>Alpha3Code : {{countryDetail.alpha3Code}}</h5>
+      <hr>
+      <h5>Calling code :
+        <span *ngFor="let callingCode of countryDetail.callingCodes;let first = first;let last=last">{{callingCode}}{{last ? '' : ', '}}</span>
+      </h5>
+      <hr>
+      <h5>Top level domain :
+        <span *ngFor="let domain of countryDetail.topLevelDomain;let first = first;let last=last">{{domain}}{{last ? '' : ', '}}</span>
+      </h5>
+      <hr>
+      <h5>Alternative spelling :
+        <span *ngFor="let altSpelling of countryDetail.altSpellings;let first = first;let last=last">{{altSpelling}}{{last ? '' : ', '}}</span>
+      </h5>
+      <hr>
+      <h5>Latitude & longitude :
+        <span *ngFor="let lalo of countryDetail.latlng;let first = first;let last=last">{{lalo}}{{last ? '' : ' & '}}</span>
+      </h5>
+      <hr>
+      <h5>Timezones :
+        <span *ngFor="let timezone of countryDetail.timezones;let first = first;let last=last">{{timezone}}{{last ? '' : ', '}}</span>
+      </h5>
+      <hr>
+      <h5 *ngIf="countryDetail.borders.length != 0">Borders :
+        <span *ngFor="let border of countryDetail.borders;let first = first;let last=last">{{border}}{{last ? '' : ', '}}</span>
+        <hr>
+      </h5>
+      <h5>Currencies :
+        <span *ngFor="let currency of countryDetail.currencies;let first = first;let last=last">{{currency.code}}{{last ? '' : ', '}}</span>
+      </h5>
+      <hr>
+      <h5>Languages :
+        <span *ngFor="let language of countryDetail.languages;let first = first;let last=last">{{language.name}}{{last ? '' : ', '}}</span>
+      </h5>
+      <hr>
+      <h5 *ngIf="countryDetail.regionalBlocs.length != 0">Regional blocs :
+        <span *ngFor="let regionalBloc of countryDetail.regionalBlocs;let first = first;let last=last">{{regionalBloc.name}}{{last ? '' : ', '}}</span>
+        <hr>
+      </h5>
+      <h5 *ngIf="countryDetail.cioc">Cioc : {{countryDetail.cioc}}
+        <hr>
+      </h5>
+      <button type="button" class="btn btn-dark" (click)="goBackToPreviousPage()">Go back</button>
+      <hr>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<!-- loader -->
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-grid-pulse">
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+<div class="container" style="text-align: center;margin-top: -2rem;">
+  <!-- form for filter -->
+  <form #filterForm="ngForm" class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <h5>Filter by:</h5>
+    </div>
+    <!-- currency filter -->
+    <div class="col-6 col-lg-6 col-md-6 col-sm-6 col-12">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" #currencyFilter="ngModel" placeholder="Currency" [(ngModel)]="currency" name="currency"
+          aria-label="Recipient's username" aria-describedby="button-addon2" (keydown)="searchCurrencyUsingKeyPress($event)"
+          [disabled]="languageFilter.valid" required>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="filterByCurrency()" [disabled]="!currencyFilter.valid">Filter</button>
+        </div>
+      </div>
+    </div>
+    <!-- language filter -->
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" #languageFilter="ngModel" placeholder="Language code" [(ngModel)]="language" name="language"
+          aria-label="Recipient's username" aria-describedby="button-addon2" (keydown)="searchLanguageUsingKeyPress($event)"
+          [disabled]="currencyFilter.valid" required>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="filterByLanguage()" [disabled]="!languageFilter.valid">Filter</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <!-- back button -->
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <button type="button" class="btn btn-dark" (click)="goBackToPreviousPage()">Go back</button>
+    </div>
+  </div>
+  <div class="row">
+    <!-- cards using *ngFor -->
+    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12" style="margin-top: 1rem;" *ngFor="let country of allCountries">
+      <div class="card text-center" style="background-color: lightgoldenrodyellow">
+        <img class="card-img-top" [src]="country.flag" alt="Country flag">
+        <div class="card-body">
+          <h5 class="card-title">{{country.name | uppercase}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Capital : {{country.capital}}</li>
+          <li class="list-group-item">
+            <p>Timezones :
+              <!--  *nfFor has a functionality to show wheather it is first or last elements which is boolean -->
+              <span *ngFor="let timezone of country.timezones;let first=first;let last=last">{{timezone}}{{last ? '' : ', '}}
+                <!--  used ternary operator(for giving comma after each element) if last tag '' else , -->
+              </span>
+            </p>
+          </li>
+          <li class="list-group-item">
+            <p>Currencies :
+              <!--  *nfFor has a functionality to show wheather it is first or last elements which is boolean -->
+              <span *ngFor="let currency of country.currencies;let first=first;let last=last">{{currency.code}}{{last ? '' : ', '}}
+                <!--  used ternary operator(for giving comma after each element) if last tag '' else , -->
+              </span>
+            </p>
+          </li>
+          <li class="list-group-item">Subregion : {{country.subregion}}</li>
+          <li class="list-group-item">Numeric code : {{country.numericCode}}</li>
+        </ul>
+        <div class="card-body">
+          <a [routerLink]="['/country',country.name]" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>

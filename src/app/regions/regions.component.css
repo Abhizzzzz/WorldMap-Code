@@ -1,0 +1,9 @@
+/* to give a gap between cards when it displays one by one */
+.adjustingMargin{   
+}
+
+@media only screen and (max-width: 768px){
+	.adjustingMargin{
+        margin-top: 1rem;
+    }
+}
